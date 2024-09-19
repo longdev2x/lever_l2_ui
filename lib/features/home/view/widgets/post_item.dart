@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/post_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -33,13 +34,16 @@ class PostItem extends StatelessWidget {
             ),
           ),
           Container(
-            margin: objPost.type == 'avatar' ? EdgeInsets.symmetric(horizontal: 80.w) : null,
+            margin: objPost.type == 'avatar'
+                ? EdgeInsets.symmetric(horizontal: 80.w)
+                : null,
             clipBehavior: Clip.none,
             padding: objPost.type == 'avatar' ? EdgeInsets.all(5.w) : null,
-            decoration: objPost.type == 'avatar' ? BoxDecoration(
-              color: const Color(0xFFC4C4C4),
-              borderRadius: BorderRadius.circular(500)
-            ) : null,
+            decoration: objPost.type == 'avatar'
+                ? BoxDecoration(
+                    color: const Color(0xFFC4C4C4),
+                    borderRadius: BorderRadius.circular(500))
+                : null,
             child: AppImageAsset(
               objPost.images[0],
               width: double.infinity,
@@ -50,16 +54,25 @@ class PostItem extends StatelessWidget {
           SizedBox(height: 15.h),
           Padding(
             padding: EdgeInsets.only(left: 27.w),
-            child: _reactButton(
-                onLikeTap: () {}, onCommentTap: () {}, onMessTap: () {}),
+            child: _reactButton(onLikeTap: () {
+              AppToast.showToast('Tapppp');
+            }, onCommentTap: () {
+              AppToast.showToast('Tapppp');
+            }, onMessTap: () {
+              AppToast.showToast('Tapppp');
+            }),
           ),
           SizedBox(width: 14.w),
           Padding(
             padding: EdgeInsets.only(
                 left: 20.w, top: 14.h, bottom: 20.h, right: 20.w),
             child: _reactInfor(
-                onLikeTap: () {},
-                onCommentTap: () {},
+                onLikeTap: () {
+                  AppToast.showToast('Tapppp');
+                },
+                onCommentTap: () {
+                  AppToast.showToast('Tapppp');
+                },
                 reactInfors: [
                   const ReactionInfor('test', 'Long', ReactionType.like),
                   const ReactionInfor('test', 'Phương', ReactionType.like),
@@ -214,7 +227,9 @@ class PostItem extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 5.h),
             child: AppImageAsset(
-              onTap: () {},
+              onTap: () {
+                AppToast.showToast('Tapppp');
+              },
               ImageRes.icThreeDot,
               height: 15,
               width: 3,
