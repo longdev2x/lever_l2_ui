@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_divider.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/friendship_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 import 'package:lever_l2/features/friend/view/widgets/friend_request_tile.dart';
@@ -96,15 +97,23 @@ class FriendScreen extends StatelessWidget {
       child: Column(
         children: [
           FriendTopWidget(
-            onSearchTap: () {},
-            onSuggetTap: () {},
-            onYourFriendTap: () {},
+            onSearchTap: () {
+              AppToast.showToast('Tappp');
+            },
+            onSuggetTap: () {
+              AppToast.showToast('Tappp');
+            },
+            onYourFriendTap: () {
+              AppToast.showToast('Tappp');
+            },
           ),
           SizedBox(height: 20.h),
           const AppDivider(),
           FriendRequestTile(
             friendCount: list.length,
-            onSeeAllTap: () {},
+            onSeeAllTap: () {
+              AppToast.showToast('Tappp');
+            },
           ),
           ListView.builder(
               shrinkWrap: true,

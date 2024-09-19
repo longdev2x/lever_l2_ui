@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/post_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -42,15 +43,25 @@ class WatchItem extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 27.w),
             child: _reactButton(
-                onLikeTap: () {}, onCommentTap: () {}, onMessTap: () {}),
+                onLikeTap: () {
+                  AppToast.showToast('Tappp');
+                }, onCommentTap: () {
+                  AppToast.showToast('Tappp');
+                }, onMessTap: () {
+                  AppToast.showToast('Tappp');
+                }),
           ),
           SizedBox(width: 14.w),
           Padding(
             padding: EdgeInsets.only(
                 left: 20.w, top: 14.h, bottom: 20.h, right: 20.w),
             child: _reactInfor(
-                onLikeTap: () {},
-                onCommentTap: () {},
+                onLikeTap: () {
+                  AppToast.showToast('Tappp');
+                },
+                onCommentTap: () {
+                  AppToast.showToast('Tappp');
+                },
                 reactInfors: [
                   const ReactionInfor('test', 'Long', ReactionType.like),
                   const ReactionInfor('test', 'Phương', ReactionType.like),
@@ -188,14 +199,18 @@ class WatchItem extends StatelessWidget {
             child: Row(
               children: [
                 AppImageAsset(
-                  onTap: () {},
+                  onTap: () {
+                    AppToast.showToast('Tappp');
+                  },
                   ImageRes.icThreeDotHori3,
                   height: 4,
                   width: 18,
                 ),
                 SizedBox(width: 14.w),
                 AppImageAsset(
-                  onTap: () {},
+                  onTap: () {
+                    AppToast.showToast('Tappp');
+                  },
                   ImageRes.icClose2,
                   height: 9,
                   width: 9,

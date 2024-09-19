@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_button.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 
 class PersonalProfilePostInfor extends StatelessWidget {
   const PersonalProfilePostInfor({super.key});
@@ -40,7 +41,9 @@ class PersonalProfilePostInfor extends StatelessWidget {
             ),
           ),
           SizedBox(height: 14.h),
-          AppElevatedButton(onTap: () {}, text: 'See All', width: 120.w),
+          AppElevatedButton(onTap: () {
+            AppToast.showToast('Tappp');
+          }, text: 'See All', width: 120.w),
         ],
       ),
     );

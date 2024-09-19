@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_appbar.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
 
 class TermScreen extends StatelessWidget {
@@ -33,7 +34,9 @@ class TermScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      AppToast.showToast('Tappp');
+                    },
                     child: const AppText12(
                       'Terms, Data Policy',
                       fontWeight: FontWeight.w400,
@@ -46,7 +49,9 @@ class TermScreen extends StatelessWidget {
                     color: Color(0xFF999999),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      AppToast.showToast('Tappp');
+                    },
                     child: const AppText12(
                       'Cookies Policy',
                       fontWeight: FontWeight.w400,
@@ -64,7 +69,9 @@ class TermScreen extends StatelessWidget {
               ),
               SizedBox(height: 31.h),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  AppToast.showToast('Tappp');
+                },
                 child: const AppText12(
                   'Sign up without updating my contact',
                   fontWeight: FontWeight.w400,

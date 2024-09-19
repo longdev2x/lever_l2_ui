@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_divider.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 import 'package:lever_l2/features/menu/view/widgets/menu_header_widget.dart';
 import 'package:lever_l2/features/menu/view/widgets/menu_options_widget.dart';
@@ -30,11 +31,17 @@ class MenuScreen extends StatelessWidget {
           ),
         ),
         const AppDivider(),
-        _rowOptions(text: 'Community resources', icon: ImageRes.icCommunity, onTap: () {}),
+        _rowOptions(text: 'Community resources', icon: ImageRes.icCommunity, onTap: () {
+          AppToast.showToast('Tappp');
+        }),
         const AppDivider(),
-        _rowOptions(text: 'Help & Support', icon: ImageRes.icHelp, onTap: () {}),
+        _rowOptions(text: 'Help & Support', icon: ImageRes.icHelp, onTap: () {
+          AppToast.showToast('Tappp');
+        }),
         const AppDivider(),
-        _rowOptions(text: 'Settings & Privacy', icon: ImageRes.icSetting, onTap: () {}),
+        _rowOptions(text: 'Settings & Privacy', icon: ImageRes.icSetting, onTap: () {
+          AppToast.showToast('Tappp');
+        }),
       ],
     );
   }

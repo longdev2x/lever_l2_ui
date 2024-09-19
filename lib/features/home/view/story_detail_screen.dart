@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/story_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -147,35 +148,45 @@ class StoryDetailScreen extends StatelessWidget {
                     children: [
                       AppImageAsset(
                         ImageRes.icReactStoryLike,
-                        onTap: () {},
+                        onTap: () {
+                          AppToast.showToast('Tappp');
+                        },
                         width: 39.w,
                         height: 39.w,
                       ),
                       SizedBox(width: 10.w),
                       AppImageAsset(
                         ImageRes.icReactStoryLove,
-                        onTap: () {},
+                        onTap: () {
+                          AppToast.showToast('Tappp');
+                        },
                         width: 39,
                         height: 39.w,
                       ),
                       SizedBox(width: 10.w),
                       AppImageAsset(
                         ImageRes.icReactStoryLoveLove,
-                        onTap: () {},
+                        onTap: () {
+                          AppToast.showToast('Tappp');
+                        },
                         width: 39,
                         height: 39.w,
                       ),
                       SizedBox(width: 10.w),
                       AppImageAsset(
                         ImageRes.icReactStoryLike,
-                        onTap: () {},
+                        onTap: () {
+                          AppToast.showToast('Tappp');
+                        },
                         width: 39,
                         height: 39.w,
                       ),
                       SizedBox(width: 10.w),
                       AppImageAsset(
                         ImageRes.icReactStoryLove,
-                        onTap: () {},
+                        onTap: () {
+                          AppToast.showToast('Tappp');
+                        },
                         width: 39,
                         height: 39.w,
                       ),

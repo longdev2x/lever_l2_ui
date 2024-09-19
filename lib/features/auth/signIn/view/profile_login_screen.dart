@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -56,7 +57,9 @@ class ProfileLoginScreen extends StatelessWidget {
                     listTile(
                         icon: ImageRes.icSearch,
                         title: 'Find Your Account',
-                        onTap: () {}),
+                        onTap: () {
+                          AppToast.showToast('Tappp');
+                        }),
                   ],
                 ),
                 Positioned(

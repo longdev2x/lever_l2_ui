@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
 class MenuOptionEntity {
@@ -29,9 +30,13 @@ class MenuOptionsWidget extends StatelessWidget {
     return Column(
       children: [
         ...options.map((option) =>
-            _optionItem(name: option.name, icon: option.icon, onTap: () {})),
+            _optionItem(name: option.name, icon: option.icon, onTap: () {
+              AppToast.showToast('Tappp');
+            })),
         SizedBox(height: 3.h),
-        _optionMore(() {}),
+        _optionMore(() {
+          AppToast.showToast('Tappp');
+        }),
         SizedBox(height: 12.h),
       ],
     );

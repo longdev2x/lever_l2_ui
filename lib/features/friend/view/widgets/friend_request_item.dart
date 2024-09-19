@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/friendship_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -46,9 +47,13 @@ class FriendRequestItem extends StatelessWidget {
                 SizedBox(height: 8.h),
                 Row(
                   children: [
-                    Expanded(child: AppElevatedButton(onTap: () {}, text: 'Confirm')),
+                    Expanded(child: AppElevatedButton(onTap: () {
+                      AppToast.showToast('Tappp');
+                    }, text: 'Confirm')),
                     SizedBox(width: 15.w),
-                    Expanded(child: AppElevatedButtonOnlyBackground(onTap: () {}, text: 'Delete')),
+                    Expanded(child: AppElevatedButtonOnlyBackground(onTap: () {
+                      AppToast.showToast('Tappp');
+                    }, text: 'Delete')),
                   ],
                 ),
               ],

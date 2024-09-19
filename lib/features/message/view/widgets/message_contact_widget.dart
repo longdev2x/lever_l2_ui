@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/user_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 import 'package:lever_l2/features/message/view/widgets/message_contact_item.dart';
@@ -67,7 +68,9 @@ class MessageContactWidget extends StatelessWidget {
                   itemBuilder: (ctx, index) {
                     return MessageContactItem(
                       objUser: usersContact[index],
-                      onTap: () {},
+                      onTap: () {
+                        AppToast.showToast('Tappp');
+                      },
                     );
                   }),
             ),

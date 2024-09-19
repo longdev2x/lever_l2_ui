@@ -4,6 +4,7 @@ import 'package:lever_l2/common/components/app_appbar.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -45,7 +46,9 @@ class JoinFacebookScreen extends StatelessWidget {
                 text: 'Next'),
             const Spacer(),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                AppToast.showToast('Tappp');
+              },
               child: const AppText14(
                 'Already have an account?',
                 color: Color(0xFF384CFF),

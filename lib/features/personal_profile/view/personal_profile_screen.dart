@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_divider.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/post_entity.dart';
 import 'package:lever_l2/common/model/user_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
@@ -47,13 +48,21 @@ class PersonalProfileScreen extends StatelessWidget {
             child: Column(
               children: [
                 PersonalProfileAction(
-                  onAddStoryTap: () {},
-                  onEditTap: () {},
-                  onMoreTap: () {},
+                  onAddStoryTap: () {
+                    AppToast.showToast('Tappp');
+                  },
+                  onEditTap: () {
+                    AppToast.showToast('Tappp');
+                  },
+                  onMoreTap: () {
+                    AppToast.showToast('Tappp');
+                  },
                 ),
                 SizedBox(height: 20.h),
                 PersonalProfileLock(
-                  onMoreTap: () {},
+                  onMoreTap: () {
+                    AppToast.showToast('Tappp');
+                  },
                 ),
               ],
             ),

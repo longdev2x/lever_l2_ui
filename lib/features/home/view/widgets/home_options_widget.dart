@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
 class HomeOptionsWidget extends StatelessWidget {
@@ -12,10 +13,18 @@ class HomeOptionsWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _optionItem(onTap: () {}, name: 'Reels', icon: ImageRes.icReel, itemColor: const Color(0xFFF9C50F), bgColor: const Color(0x1AF9C50F)),
-        _optionItem(onTap: () {}, name: 'Room', icon: ImageRes.icRoom, itemColor: const Color(0xFF44C041), bgColor: const Color(0x1A44C041)),
-        _optionItem(onTap: () {}, name: 'Group', icon: ImageRes.icGroup, itemColor: const Color(0xFFFC6565), bgColor: const Color(0x1AF85900)),
-        _optionItem(onTap: () {}, name: 'Live', icon: ImageRes.icLive, itemColor: const Color(0xFF486BE5), bgColor: const Color(0x1A486BE5)),
+        _optionItem(onTap: () {
+          AppToast.showToast('Tappp');
+        }, name: 'Reels', icon: ImageRes.icReel, itemColor: const Color(0xFFF9C50F), bgColor: const Color(0x1AF9C50F)),
+        _optionItem(onTap: () {
+          AppToast.showToast('Tappp');
+        }, name: 'Room', icon: ImageRes.icRoom, itemColor: const Color(0xFF44C041), bgColor: const Color(0x1A44C041)),
+        _optionItem(onTap: () {
+          AppToast.showToast('Tappp');
+        }, name: 'Group', icon: ImageRes.icGroup, itemColor: const Color(0xFFFC6565), bgColor: const Color(0x1AF85900)),
+        _optionItem(onTap: () {
+          AppToast.showToast('Tappp');
+        }, name: 'Live', icon: ImageRes.icLive, itemColor: const Color(0xFF486BE5), bgColor: const Color(0x1A486BE5)),
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/story_entity.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
@@ -29,7 +30,9 @@ class HomeStoryWidget extends StatelessWidget {
           if (index == 0) {
             return _storyItem(
               id: 'sdf',
-                onTap: () {},
+                onTap: () {
+                  AppToast.showToast('Tappp');
+                },
                 name: '',
                 thumbnail: ImageRes.imgStory1,
                 avatar: ImageRes.icAddStory);

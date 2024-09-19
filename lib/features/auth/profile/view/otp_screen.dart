@@ -5,6 +5,7 @@ import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
 import 'package:lever_l2/common/components/app_text_field.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
@@ -45,9 +46,13 @@ class OtpScreen extends StatelessWidget {
                   },
                   text: 'Continue'),
               SizedBox(height:35.h),
-              listTile(icon: ImageRes.icMail, title: 'Send email again', onTap: () {}),
+              listTile(icon: ImageRes.icMail, title: 'Send email again', onTap: () {
+                AppToast.showToast('Tappp');
+              }),
               SizedBox(height:25.h),
-              listTile(icon: ImageRes.icMess, title: 'Get code via SMS', onTap: () {}),
+              listTile(icon: ImageRes.icMess, title: 'Get code via SMS', onTap: () {
+                AppToast.showToast('Tappp');
+              }),
             ],
           ),
         ),
