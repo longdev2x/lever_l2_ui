@@ -56,16 +56,20 @@ class ChatEntity {
 class MessageEntity {
   final String id;
   final String senderId;
+  final String? senderAvatar;
   final String receiverId;
-  final String content;
+  final String type;
+  final Object content;
   final DateTime timestamp;
   final bool isRead;
 
   MessageEntity({
     String? id,
     required this.senderId,
+    required this.senderAvatar,
     required this.receiverId,
     required this.content,
+    required this.type,
     required this.timestamp,
     this.isRead = false,
   }) : id = id ?? const Uuid().v4();
@@ -74,8 +78,10 @@ class MessageEntity {
     return MessageEntity(
       id: json['id'],
       senderId: json['sender_id'],
+      senderAvatar: json['sender_avatar'],
       receiverId: json['receiver_id'],
       content: json['content'],
+      type: json['type'],
       timestamp: (json['timestamp'] as Timestamp).toDate(),
       isRead: json['is_read'] ?? false,
     );
@@ -85,8 +91,10 @@ class MessageEntity {
     return {
       'id': id,
       'sender_id': senderId,
+      'sender_avatar': senderAvatar,
       'receiver_id': receiverId,
       'content': content,
+      'type': type,
       'timestamp': Timestamp.fromDate(timestamp),
       'is_read': isRead,
     };

@@ -57,8 +57,29 @@ class ImageRes {
   static const String icMessWrite = '$_baseIcon/icMessWrite.png';
   static const String icMessCam = '$_baseIcon/icMessCam.png';
   static const String icCameraAdd = '$_baseIcon/icCameraAdd.png';
+  static const String icAddCamera2 = '$_baseIcon/icAddCamera2.png';
   static const String icUnread = '$_baseIcon/icUnread.png';
   static const String icRead = '$_baseIcon/icRead.png';
+  static const String icCamera2 = '$_baseIcon/icCamera2.png';
+  static const String icCall = '$_baseIcon/icCall.png';
+  static const String icVideo = '$_baseIcon/icVideo.png';
+  static const String icMessHumbeger = '$_baseIcon/icMessHumbeger.png';
+  static const String icMessNotification = '$_baseIcon/icMessNotification.png';
+  static const String icMessDelete = '$_baseIcon/icMessDelete.png';
+  static const String icBackMess = '$_baseIcon/icBackMess.png';
+  static const String icCallMess = '$_baseIcon/icCallMess.png';
+  static const String icVideoMess = '$_baseIcon/icVideoMess.png';
+  static const String icStickerHi = '$_baseIcon/icStickerHi.png';
+  static const String icNavMessMenu = '$_baseIcon/icNavMessMenu.png';
+  static const String icNavMessCam = '$_baseIcon/icNavMessCam.png';
+  static const String icNavMessVoice = '$_baseIcon/icNavMessVoice.png';
+  static const String icNavMessImage = '$_baseIcon/icNavMessImage.png';
+  static const String icNavMessLike = '$_baseIcon/icNavMessLike.png';
+  static const String icNavMessSticker = '$_baseIcon/icNavMessSticker.png';
+  static const String icChatInforCall = '$_baseIcon/icChatInforCall.png';
+  static const String icChatInforVideo = '$_baseIcon/icChatInforVideo.png';
+  static const String icChatInforProfile = '$_baseIcon/icChatInforProfile.png';
+  static const String icChatInforMute = '$_baseIcon/icChatInforMute.png';
   //Menu
   static const String icJobs = '$_baseIcon/icJobs.png';
   static const String icCovid = '$_baseIcon/icCovid.png';
@@ -68,9 +89,11 @@ class ImageRes {
   static const String icGamming = '$_baseIcon/icGamming.png';
   static const String icWeather = '$_baseIcon/icWeather.png';
   static const String icSave = '$_baseIcon/icSave.png';
+  static const String icTick = '$_baseIcon/icTick.png';
   static const String icCommunity = '$_baseIcon/icCommunity.png';
   static const String icHelp = '$_baseIcon/icHelp.png';
   static const String icSetting = '$_baseIcon/icSetting.png';
+  static const String icFriend2 = '$_baseIcon/icFriend2.png';
 
   static const String icNavHome = '$_baseIcon/icNavHome.png';
   static const String icNavFriend = '$_baseIcon/icNavFriend.png';

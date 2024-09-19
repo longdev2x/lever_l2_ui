@@ -57,7 +57,7 @@ class MessageItem extends StatelessWidget {
                   AppText12(
                     objChat.lastMsgUserId == objChat.userId
                         ? 'You: ${objChat.lastMsg}. '
-                        : objChat.lastMsg,
+                        : '${objChat.lastMsg}. ',
                     fontWeight: FontWeight.w400,
                   ),
                   DateTime.now().day == objChat.time.day

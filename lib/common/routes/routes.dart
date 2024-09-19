@@ -16,7 +16,10 @@ import 'package:lever_l2/features/auth/signUp/view/term_screen.dart';
 import 'package:lever_l2/features/auth/signUp/view/what_your_name_screen.dart';
 import 'package:lever_l2/features/auth/signUp/view/your_birth_day_screen.dart';
 import 'package:lever_l2/features/home/view/story_detail_screen.dart';
+import 'package:lever_l2/features/message/view/chat_infor_screen.dart';
+import 'package:lever_l2/features/message/view/chat_screen.dart';
 import 'package:lever_l2/features/message/view/message_screen.dart';
+import 'package:lever_l2/features/message/view/new_mess_screen.dart';
 import 'package:lever_l2/features/splash/splash_screen.dart';
 import 'package:lever_l2/global.dart';
 
@@ -90,6 +93,18 @@ class AppRoutes {
       const RouteEntity(
         path: AppRoutesNames.message,
         page: MessageScreen(),
+      ),
+      const RouteEntity(
+        path: AppRoutesNames.newMess,
+        page: NewMessScreen(),
+      ),
+      const RouteEntity(
+        path: AppRoutesNames.chat,
+        page: ChatScreen(),
+      ),
+      const RouteEntity(
+        path: AppRoutesNames.chatInfor,
+        page: ChatInforScreen(),
       ),
     ];
   }

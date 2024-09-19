@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
+import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 
 class MessageHeaderWidget extends StatelessWidget {
@@ -16,7 +17,9 @@ class MessageHeaderWidget extends StatelessWidget {
       const Spacer(),
       const AppImageAsset(ImageRes.icMessCam, width: 40, height: 40, radius: 10,),
       SizedBox(width: 12.w),
-      const AppImageAsset(ImageRes.icMessWrite, width: 40, height: 40, radius: 10,),
+      AppImageAsset(onTap: () {
+        Navigator.of(context).pushNamed(AppRoutesNames.newMess);
+      },ImageRes.icMessWrite, width: 40, height: 40, radius: 10,),
     ],);
   }
 }

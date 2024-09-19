@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:lever_l2/common/components/app_image_asset.dart';
+import 'package:lever_l2/common/components/app_toast.dart';
 import 'package:lever_l2/common/model/message_entity.dart';
+import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 import 'package:lever_l2/features/message/view/widgets/message_item.dart';
 
@@ -166,8 +171,112 @@ class MessageList extends StatelessWidget {
         shrinkWrap: true,
         itemCount: chats.length,
         itemBuilder: (ctx, index) {
-          return MessageItem(
-            objChat: chats[index],
+          return Slidable(
+            key: ValueKey(index),
+            startActionPane: ActionPane(
+              extentRatio: 0.5,
+              motion: const ScrollMotion(),
+              children: [
+                CustomSlidableAction(
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  onPressed: (ctx) {
+                    AppToast.showToast('Tapppp');
+                  },
+                  child: Container(
+                    width: 36.w,
+                    height: 36.w,
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    child: const AppImageAsset(
+                      ImageRes.icCamera2,
+                    ),
+                  ),
+                ),
+                CustomSlidableAction(
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  onPressed: (ctx) {
+                    AppToast.showToast('Tapppp');
+                  },
+                  child: Container(
+                    width: 36.w,
+                    height: 36.w,
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    child: const AppImageAsset(
+                      ImageRes.icCall,
+                    ),
+                  ),
+                ),
+                CustomSlidableAction(
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  onPressed: (ctx) {
+                    AppToast.showToast('Tapppp');
+                  },
+                  child: Container(
+                    width: 36.w,
+                    height: 36.w,
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    child: const AppImageAsset(
+                      ImageRes.icVideo,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            endActionPane: ActionPane(
+              extentRatio: 0.5,
+              motion: const ScrollMotion(),
+              children: [
+                CustomSlidableAction(
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  onPressed: (ctx) {
+                    AppToast.showToast('Tapppp');
+                  },
+                  child: Container(
+                    width: 36.w,
+                    height: 36.w,
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    child: const AppImageAsset(
+                      ImageRes.icMessHumbeger,
+                    ),
+                  ),
+                ),
+                CustomSlidableAction(
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  onPressed: (ctx) {
+                    AppToast.showToast('Tapppp');
+                  },
+                  child: Container(
+                    width: 36.w,
+                    height: 36.w,
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    child: const AppImageAsset(
+                      ImageRes.icMessNotification,
+                    ),
+                  ),
+                ),
+                CustomSlidableAction(
+                  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                  onPressed: (ctx) {
+                    AppToast.showToast('Tapppp');
+                  },
+                  child: Container(
+                    width: 36.w,
+                    height: 36.w,
+                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                    child: const AppImageAsset(
+                      ImageRes.icMessDelete,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutesNames.chat, arguments: chats[index]);
+              },
+              child: MessageItem(
+                objChat: chats[index],
+              ),
+            ),
           );
         });
   }

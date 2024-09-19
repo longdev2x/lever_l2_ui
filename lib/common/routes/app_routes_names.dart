@@ -17,5 +17,8 @@
   static const String newCreatePass = '/newCreatePass';
   static const String storyDetail = '/storyDetail';
   static const String message = '/message';
+  static const String newMess = '/newMess';
+  static const String chat = '/chat';
+  static const String chatInfor = '/chatIfor';
 }
 

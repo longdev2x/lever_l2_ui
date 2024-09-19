@@ -6,7 +6,7 @@ import 'package:lever_l2/common/model/user_entity.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 import 'package:lever_l2/features/message/view/widgets/message_contact_item.dart';
 
-final List<UserEntity> users = [
+final List<UserEntity> usersContact = [
   UserEntity(name: 'Nhật Long', isOnline: true,avatar: ImageRes.imgAvatar1),
   UserEntity(name: 'Thu Phương', isOnline: true,avatar: ImageRes.imgAvatar2),
   UserEntity(name: 'Chi Dân', isOnline: false,avatar: ImageRes.imgAvatar3),
@@ -61,12 +61,12 @@ class MessageContactWidget extends StatelessWidget {
             SizedBox(
               height: 90.h,
               child: ListView.builder(
-                  itemCount: users.length,
+                  itemCount: usersContact.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (ctx, index) {
                     return MessageContactItem(
-                      objUser: users[index],
+                      objUser: usersContact[index],
                       onTap: () {},
                     );
                   }),
