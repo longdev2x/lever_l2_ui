@@ -5,6 +5,7 @@ class ImageRes {
   static const String imgLogo = '$_baseImg/imgLogo.png';
   static const String imgLogoMeta = '$_baseImg/imgLogoMeta.png';
   static const String imgBanner1 = '$_baseImg/imgBanner1.png';
+  static const String imgBanner2 = '$_baseImg/imgBanner2.png';
   static const String imgBgLogin = '$_baseImg/imgBgLogin.png';
   static const String imgFbMessager = '$_baseImg/imgFbMessager.png';
   static const String imgStory1 = '$_baseImg/imgStory1.png';
@@ -13,6 +14,7 @@ class ImageRes {
   static const String imgStory4 = '$_baseImg/imgStory4.png';
   static const String imgAvatar1 = '$_baseImg/imgAvatar1.png';
   static const String imgAvatar2 = '$_baseImg/imgAvatar2.png';
+  static const String imgChangeAvatar = '$_baseImg/imgChangeAvatar.png';
   static const String imgAvatar3 = '$_baseImg/imgAvatar3.png';
   static const String imgAvatarPost = '$_baseImg/imgAvatarPost.png';
   static const String imgCoverDefault = '$_baseImg/imgCoverDefault.png';

@@ -32,10 +32,20 @@ class PostItem extends StatelessWidget {
               maxLines: 3,
             ),
           ),
-          AppImageAsset(
-            objPost.images[0],
-            width: double.infinity,
-            fit: BoxFit.fitWidth,
+          Container(
+            margin: objPost.type == 'avatar' ? EdgeInsets.symmetric(horizontal: 80.w) : null,
+            clipBehavior: Clip.none,
+            padding: objPost.type == 'avatar' ? EdgeInsets.all(5.w) : null,
+            decoration: objPost.type == 'avatar' ? BoxDecoration(
+              color: const Color(0xFFC4C4C4),
+              borderRadius: BorderRadius.circular(500)
+            ) : null,
+            child: AppImageAsset(
+              objPost.images[0],
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+              radius: objPost.type == 'avatar' ? 500 : 0,
+            ),
           ),
           SizedBox(height: 15.h),
           Padding(
@@ -184,7 +194,7 @@ class PostItem extends StatelessWidget {
                     : _richText(
                         authorName: authorName,
                         tagger: taggers[0].tagName,
-                      ),
+                        type: objPost.type),
               ),
               SizedBox(height: 5.h),
               Row(
@@ -215,22 +225,28 @@ class PostItem extends StatelessWidget {
     );
   }
 
-  Widget _richText({required String authorName, required String tagger}) =>
-      RichText(
-        text: TextSpan(
-          text: authorName,
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: 14.sp),
-          children: [
-            TextSpan(
-              text: ' is with ',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14.sp),
-            ),
+  Widget _richText(
+      {required String authorName,
+      required String tagger,
+      required String type}) {
+    String connectText = ' is with ';
+    if (type == 'avatar') {
+      connectText = ' updated his profile photo ';
+    }
+    return RichText(
+      text: TextSpan(
+        text: authorName,
+        style: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.w600, fontSize: 14.sp),
+        children: [
+          TextSpan(
+            text: connectText,
+            style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+                fontSize: 14.sp),
+          ),
+          if (type != 'avatar')
             TextSpan(
               text: tagger,
               style: TextStyle(
@@ -238,7 +254,8 @@ class PostItem extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontSize: 14.sp),
             ),
-          ],
-        ),
-      );
+        ],
+      ),
+    );
+  }
 }

@@ -9,18 +9,26 @@ class NavItemEntity {
   final String title;
   final String icon;
   final String iconChose;
-  const NavItemEntity(this.title, this.icon, this.iconChose);
+  final int? number;
+
+  const NavItemEntity(this.title, this.icon, this.iconChose, {this.number});
 }
 
 final List<NavItemEntity> navItems = [
-  const NavItemEntity('Home', ImageRes.icNavHome, ImageRes.icNavHomeActive),
+  const NavItemEntity(
+    'Home',
+    ImageRes.icNavHome,
+    ImageRes.icNavHomeActive,
+  ),
   const NavItemEntity(
       'Friend', ImageRes.icNavFriend, ImageRes.icNavFriendActive),
   const NavItemEntity(
       'Person', ImageRes.icNavPerson, ImageRes.icNavPersonActive),
-  const NavItemEntity('Video', ImageRes.icNavVideo, ImageRes.icNavVideoActive),
+  const NavItemEntity('Video', ImageRes.icNavVideo, ImageRes.icNavVideoActive,
+      number: 9),
   const NavItemEntity('Notification', ImageRes.icNavNotification,
-      ImageRes.icNavNotificationActive),
+      ImageRes.icNavNotificationActive,
+      number: 3),
   const NavItemEntity(
       'Humbeger', ImageRes.icNavHumbeger, ImageRes.icNavHumbegerActive),
 ];
@@ -42,11 +50,13 @@ class NavigationWidget extends ConsumerWidget {
             (index) {
               NavItemEntity navItem = navItems[index];
               return _navItem(
-                  onTap: () {
-                    ref.read(navIndexProvider.notifier).state = index;
-                  },
-                  icon: indexChose == index ? navItem.iconChose : navItem.icon,
-                  isChose: indexChose == index);
+                onTap: () {
+                  ref.read(navIndexProvider.notifier).state = index;
+                },
+                icon: indexChose == index ? navItem.iconChose : navItem.icon,
+                isChose: indexChose == index,
+                number: navItem.number,
+              );
             },
           ),
         ],
@@ -55,15 +65,43 @@ class NavigationWidget extends ConsumerWidget {
   }
 
   Widget _navItem(
-      {required Function() onTap, required String icon, bool isChose = false}) {
+      {required Function() onTap,
+      required String icon,
+      bool isChose = false,
+      int? number}) {
     return GestureDetector(
       onTap: onTap,
       child: Column(
         children: [
-          AppImageAsset(icon,
-              color: isChose ? const Color(0xFF384CFF) : null,
-              width: 20.w,
-              height: 21.w),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              AppImageAsset(
+                icon,
+                color: isChose ? const Color(0xFF384CFF) : null,
+                width: 20.w,
+                height: 21.w,
+              ),
+              if (number != null)
+                Positioned(
+                  top: -3,
+                  right: -3,
+                  child: CircleAvatar(
+                    backgroundColor: const Color(0xFFFF0000),
+                    radius: 6.w,
+                    child: Center(
+                      child: Text(
+                        number.toString(),
+                        style: TextStyle(
+                            fontSize: 7.sp,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
           SizedBox(height: 5.67.h),
           if (isChose)
             Container(
