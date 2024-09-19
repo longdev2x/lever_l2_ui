@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lever_l2/common/components/app_appbar.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_text.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
@@ -11,9 +12,7 @@ class GenderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Gender'),
-      ),
+      appBar: appAppBarNormal('Gender', context: context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
         child: Column(
@@ -30,19 +29,29 @@ class GenderScreen extends StatelessWidget {
               color: Color(0xFF999999),
             ),
             SizedBox(height: 70.h),
-            GenderPickerWidget(text: 'Female', groupValue: 'Female', onChanged: (value) {
-              
-            },),
-            GenderPickerWidget(text: 'Male', groupValue: '', onChanged: (value) {
-              
-            },),
-            GenderPickerWidget(text: 'Custom', subText: 'Select custome to choose another gender, \n or if you’d rather not say', groupValue: '', onChanged: (value) {
-              
-            },),
+            GenderPickerWidget(
+              text: 'Female',
+              groupValue: 'Female',
+              onChanged: (value) {},
+            ),
+            GenderPickerWidget(
+              text: 'Male',
+              groupValue: '',
+              onChanged: (value) {},
+            ),
+            GenderPickerWidget(
+              text: 'Custom',
+              subText:
+                  'Select custome to choose another gender, \n or if you’d rather not say',
+              groupValue: '',
+              onChanged: (value) {},
+            ),
             SizedBox(height: 176.h),
-            AppElevatedButton(onTap: () {
-              Navigator.of(context).pushNamed(AppRoutesNames.phone);
-            }, text: 'Next'),
+            AppElevatedButton(
+                onTap: () {
+                  Navigator.of(context).pushNamed(AppRoutesNames.phone);
+                },
+                text: 'Next'),
           ],
         ),
       ),

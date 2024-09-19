@@ -14,11 +14,15 @@ class NavItemEntity {
 
 final List<NavItemEntity> navItems = [
   const NavItemEntity('Home', ImageRes.icNavHome, ImageRes.icNavHomeActive),
-  const NavItemEntity('Friend', ImageRes.icNavFriend, ImageRes.icNavFriendActive),
-  const NavItemEntity('Person', ImageRes.icNavPerson, ImageRes.icNavPersonActive),
+  const NavItemEntity(
+      'Friend', ImageRes.icNavFriend, ImageRes.icNavFriendActive),
+  const NavItemEntity(
+      'Person', ImageRes.icNavPerson, ImageRes.icNavPersonActive),
   const NavItemEntity('Video', ImageRes.icNavVideo, ImageRes.icNavVideoActive),
-  const NavItemEntity('Notification', ImageRes.icNavNotification, ImageRes.icNavNotificationActive),
-  const NavItemEntity('Humbeger', ImageRes.icNavHumbeger, ImageRes.icNavHumbegerActive),
+  const NavItemEntity('Notification', ImageRes.icNavNotification,
+      ImageRes.icNavNotificationActive),
+  const NavItemEntity(
+      'Humbeger', ImageRes.icNavHumbeger, ImageRes.icNavHumbegerActive),
 ];
 
 class NavigationWidget extends ConsumerWidget {
@@ -37,9 +41,12 @@ class NavigationWidget extends ConsumerWidget {
             navItems.length,
             (index) {
               NavItemEntity navItem = navItems[index];
-              return _navItem(onTap: () {
-                ref.read(navIndexProvider.notifier).state = index;
-              }, icon: indexChose == index ? navItem.iconChose : navItem.icon, isChose: indexChose == index);
+              return _navItem(
+                  onTap: () {
+                    ref.read(navIndexProvider.notifier).state = index;
+                  },
+                  icon: indexChose == index ? navItem.iconChose : navItem.icon,
+                  isChose: indexChose == index);
             },
           ),
         ],
@@ -54,17 +61,18 @@ class NavigationWidget extends ConsumerWidget {
       child: Column(
         children: [
           AppImageAsset(icon,
-          color: isChose ? const Color(0xFF384CFF) : null,
+              color: isChose ? const Color(0xFF384CFF) : null,
               width: 20.w,
               height: 21.w),
           SizedBox(height: 5.67.h),
-          Container(
-            height: 5.68,
-            width: 5.67,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
+          if (isChose)
+            Container(
+              height: 5.68,
+              width: 5.67,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: const Color(0xFF384CFF)),
             ),
-          ),
         ],
       ),
     );

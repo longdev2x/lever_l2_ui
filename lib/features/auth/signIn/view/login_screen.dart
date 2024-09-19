@@ -30,7 +30,9 @@ class LoginScreen extends StatelessWidget {
               const AppTextFormField(lable: 'Phone or Email'),
               const AppTextFormField(lable: 'Password', isPass: true,),
               SizedBox(height: 50.h),
-              AppElevatedButton(onTap: () {}, text: 'Log In'),
+              AppElevatedButton(onTap: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(AppRoutesNames.application, (route) => false,);
+              }, text: 'Log In'),
               SizedBox(height: 20.h),
               GestureDetector(
                   onTap: () {

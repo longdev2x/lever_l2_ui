@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lever_l2/common/components/app_appbar.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_text.dart';
 import 'package:lever_l2/common/components/app_text_field.dart';
@@ -11,9 +12,7 @@ class PasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Password'),
-      ),
+      appBar: appAppBarNormal('Password', context: context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
         child: Column(

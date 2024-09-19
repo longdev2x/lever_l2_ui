@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lever_l2/common/components/app_appbar.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_image_asset.dart';
 import 'package:lever_l2/common/components/app_text.dart';
@@ -12,9 +13,7 @@ class JoinFacebookScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Create Account'),
-      ),
+      appBar: appAppBarNormal('Create Account', context: context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
         child: Column(
@@ -38,14 +37,15 @@ class JoinFacebookScreen extends StatelessWidget {
               color: Color(0xFF999999),
             ),
             SizedBox(height: 52.h),
-            AppElevatedButton(onTap: () {
-              Navigator.of(context).pushNamed(AppRoutesNames.whatYourNameScreen);
-            }, text: 'Next'),
+            AppElevatedButton(
+                onTap: () {
+                  Navigator.of(context)
+                      .pushNamed(AppRoutesNames.whatYourNameScreen);
+                },
+                text: 'Next'),
             const Spacer(),
             GestureDetector(
-              onTap: () {
-                
-              },
+              onTap: () {},
               child: const AppText14(
                 'Already have an account?',
                 color: Color(0xFF384CFF),

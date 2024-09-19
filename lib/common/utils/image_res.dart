@@ -80,6 +80,7 @@ class ImageRes {
   static const String icChatInforVideo = '$_baseIcon/icChatInforVideo.png';
   static const String icChatInforProfile = '$_baseIcon/icChatInforProfile.png';
   static const String icChatInforMute = '$_baseIcon/icChatInforMute.png';
+  static const String icBack = '$_baseIcon/icBack.png';
   //Menu
   static const String icJobs = '$_baseIcon/icJobs.png';
   static const String icCovid = '$_baseIcon/icCovid.png';
