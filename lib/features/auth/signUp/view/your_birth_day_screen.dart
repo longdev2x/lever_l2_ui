@@ -1,14 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_holo_date_picker/date_picker_theme.dart';
+import 'package:flutter_holo_date_picker/widget/date_picker_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lever_l2/common/components/app_appbar.dart';
 import 'package:lever_l2/common/components/app_button.dart';
 import 'package:lever_l2/common/components/app_text.dart';
 import 'package:lever_l2/common/routes/app_routes_names.dart';
 
-class YourBirthDayScreen extends StatelessWidget {
+class YourBirthDayScreen extends StatefulWidget {
   const YourBirthDayScreen({super.key});
 
+  @override
+  State<YourBirthDayScreen> createState() => _YourBirthDayScreenState();
+}
+
+class _YourBirthDayScreenState extends State<YourBirthDayScreen> {
+  DateTime date = DateTime.now().subtract(const Duration(days: 7300));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,28 +41,52 @@ class YourBirthDayScreen extends StatelessWidget {
               color: Color(0xFF999999),
             ),
             SizedBox(height: 92.h),
-            SizedBox(
-              height: 111.h,
-              width: 300.w,
-              child: CupertinoDatePicker(
-                mode: CupertinoDatePickerMode.date,
-                dateOrder: DatePickerDateOrder.dmy,
-                onDateTimeChanged: (value) {},
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: DatePickerWidget(
+                pickerTheme: DateTimePickerTheme(
+                  backgroundColor: Colors.transparent,
+                  itemTextStyle:
+                      TextStyle(color: Colors.black, fontSize: 14.sp),
+                  dividerColor: Colors.black,
+                ),
+                dateFormat: "dd-MMM-yyyy",
+                firstDate: DateTime.now().subtract(const Duration(days: 36500)),
+                lastDate: DateTime.now(),
+                initialDate: date,
+                onChange: (dateTime, selectedIndex) {
+                  setState(() {
+                    date = dateTime;
+                  });
+                },
               ),
             ),
             SizedBox(height: 66.h),
-            const AppText14(
-              '25 Years old',
+            AppText14(
+              '${birth(date)} Years old',
               fontWeight: FontWeight.w600,
               color: Colors.black,
             ),
             SizedBox(height: 90.h),
-            AppElevatedButton(onTap: () {
-              Navigator.of(context).pushNamed(AppRoutesNames.gender);
-            }, text: 'Next'),
+            AppElevatedButton(
+                onTap: () {
+                  Navigator.of(context).pushNamed(AppRoutesNames.gender);
+                },
+                text: 'Next'),
           ],
         ),
       ),
     );
+  }
+
+  int birth(DateTime date) {
+    DateTime today = DateTime.now();
+    int age = today.year - date.year;
+
+    if (today.month < date.month ||
+        (today.month == date.month && today.day < date.day)) {
+      age--;
+    }
+    return age;
   }
 }
