@@ -77,6 +77,7 @@ class ImageRes {
   static const String icNavMessVoice = '$_baseIcon/icNavMessVoice.png';
   static const String icNavMessImage = '$_baseIcon/icNavMessImage.png';
   static const String icNavMessLike = '$_baseIcon/icNavMessLike.png';
+  static const String icSendMessage = '$_baseIcon/icSendMessage.png';
   static const String icNavMessSticker = '$_baseIcon/icNavMessSticker.png';
   static const String icChatInforCall = '$_baseIcon/icChatInforCall.png';
   static const String icChatInforVideo = '$_baseIcon/icChatInforVideo.png';
@@ -97,6 +98,7 @@ class ImageRes {
   static const String icHelp = '$_baseIcon/icHelp.png';
   static const String icSetting = '$_baseIcon/icSetting.png';
   static const String icFriend2 = '$_baseIcon/icFriend2.png';
+  static const String icArrowRight = '$_baseIcon/icArrowRight.png';
 
   static const String icNavHome = '$_baseIcon/icNavHome.png';
   static const String icNavFriend = '$_baseIcon/icNavFriend.png';

@@ -171,6 +171,10 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
             children: [
+              if (isMessTap)
+                AppImageAsset(onTap: () {
+                  AppToast.showToast('Tapppp');
+                }, ImageRes.icArrowRight, width: 20.w, height: 20.w),
               if (!isMessTap)
                 Row(
                   children: [
@@ -231,9 +235,13 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
               )),
               SizedBox(width: 21.15.w),
-              AppImageAsset(onTap: () {
-                AppToast.showToast('Tapppp');
-              }, ImageRes.icNavMessLike, width: 20.w, height: 20.w),
+              isMessTap
+                  ? AppImageAsset(onTap: () {
+                      AppToast.showToast('Tapppp');
+                    }, ImageRes.icSendMessage, width: 30.w, height: 30.w, color: Colors.purple,)
+                  : AppImageAsset(onTap: () {
+                      AppToast.showToast('Tapppp');
+                    }, ImageRes.icNavMessLike, width: 20.w, height: 20.w),
             ],
           ),
         ),
