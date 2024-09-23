@@ -8,9 +8,21 @@ import 'package:lever_l2/common/routes/app_routes_names.dart';
 import 'package:lever_l2/common/utils/image_res.dart';
 import 'package:lever_l2/features/message/view/widgets/chat_item.dart';
 
-class ChatScreen extends StatelessWidget {
+class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
 
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  void handleMessTap(bool onTap) {
+    setState(() {
+      isMessTap = onTap;
+    });
+  }
+
+  bool isMessTap = false;
   @override
   Widget build(BuildContext context) {
     final ChatEntity objChat =
@@ -29,7 +41,8 @@ class ChatScreen extends StatelessWidget {
         titleSpacing: 0,
         title: GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed(AppRoutesNames.chatInfor, arguments: objChat);
+            Navigator.of(context)
+                .pushNamed(AppRoutesNames.chatInfor, arguments: objChat);
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -45,7 +58,8 @@ class ChatScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppText16(objChat.partnerUsername, fontWeight: FontWeight.w600),
+                  AppText16(objChat.partnerUsername,
+                      fontWeight: FontWeight.w600),
                   Padding(
                     padding: EdgeInsets.only(left: 3.w),
                     child: const AppText10(
@@ -157,22 +171,27 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
             children: [
-              AppImageAsset(onTap: () {
-                AppToast.showToast('Tapppp');
-              }, ImageRes.icNavMessMenu, width: 20.w, height: 20.w),
-              SizedBox(width: 21.15.w),
-              AppImageAsset(onTap: () {
-                AppToast.showToast('Tapppp');
-              }, ImageRes.icNavMessCam, width: 20.w, height: 20.w),
-              SizedBox(width: 21.15.w),
-              AppImageAsset(onTap: () {
-                AppToast.showToast('Tapppp');
-              }, ImageRes.icNavMessImage, width: 20.w, height: 20.w),
-              SizedBox(width: 21.15.w),
-              AppImageAsset(onTap: () {
-                AppToast.showToast('Tapppp');
-              }, ImageRes.icNavMessVoice, width: 20.w, height: 20.w),
-              SizedBox(width: 21.15.w),
+              if (!isMessTap)
+                Row(
+                  children: [
+                    AppImageAsset(onTap: () {
+                      AppToast.showToast('Tapppp');
+                    }, ImageRes.icNavMessMenu, width: 20.w, height: 20.w),
+                    SizedBox(width: 21.15.w),
+                    AppImageAsset(onTap: () {
+                      AppToast.showToast('Tapppp');
+                    }, ImageRes.icNavMessCam, width: 20.w, height: 20.w),
+                    SizedBox(width: 21.15.w),
+                    AppImageAsset(onTap: () {
+                      AppToast.showToast('Tapppp');
+                    }, ImageRes.icNavMessImage, width: 20.w, height: 20.w),
+                    SizedBox(width: 21.15.w),
+                    AppImageAsset(onTap: () {
+                      AppToast.showToast('Tapppp');
+                    }, ImageRes.icNavMessVoice, width: 20.w, height: 20.w),
+                    SizedBox(width: 21.15.w),
+                  ],
+                ),
               Expanded(
                   child: Container(
                 constraints: BoxConstraints(maxHeight: 36.h),
@@ -185,17 +204,18 @@ class ChatScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: TextField(
+                          onTap: () => handleMessTap(true),
+                          onTapOutside: (event) => handleMessTap(false),
                           decoration: InputDecoration(
-                            hintText: 'Aa',
-                            border: _border(),
-                            errorBorder: _border(),
-                            enabledBorder: _border(),
-                            focusedBorder: _border(),
-                            disabledBorder: _border(),
-                            focusedErrorBorder: _border(),
-                            contentPadding: EdgeInsets.symmetric(vertical: 9.h)
-                          ),
-                          
+                              hintText: 'Aa',
+                              border: _border(),
+                              errorBorder: _border(),
+                              enabledBorder: _border(),
+                              focusedBorder: _border(),
+                              disabledBorder: _border(),
+                              focusedErrorBorder: _border(),
+                              contentPadding:
+                                  EdgeInsets.symmetric(vertical: 9.h)),
                         ),
                       ),
                       AppImageAsset(
